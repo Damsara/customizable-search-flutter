@@ -1,6 +1,7 @@
-import 'package:customizable_search/SearchHeader.dart';
+import 'package:customizable_search/search_head.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SearchHeader());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(SearchHead());
 }
