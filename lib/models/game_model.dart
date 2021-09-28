@@ -1,11 +1,11 @@
-
 class SearchGame {
   List<GameDetails>? _data;
 
   SearchGame.fromJson(Map<String, dynamic> json) {
     _data = json['results'] == null
         ? null
-        : List<GameDetails>.from(json['results'].map((games) => GameDetails.fromJson(games)));
+        : List<GameDetails>.from(
+            json['results'].map((games) => GameDetails.fromJson(games)));
   }
 
   List<GameDetails>? get data => _data;
@@ -24,5 +24,6 @@ class GameDetails {
     id = json['id'] == null ? null : json['id'];
     // genres = json['results'] == null ? null : List<Genres>.from(json['results'].map((games) => Genres.fromJson(games)));
   }
+
   GameDetails({this.name, this.released, this.image, this.id});
 }

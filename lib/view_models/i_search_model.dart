@@ -47,7 +47,4 @@ class ISearchModel extends SearchModel {
   @override
   // TODO: implement states
   SearchScreenStates get states => _screenStates;
-
-
-
 }
