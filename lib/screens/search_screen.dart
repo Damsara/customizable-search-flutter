@@ -1,6 +1,5 @@
 import 'package:customizable_search/helper/enums.dart';
 import 'package:customizable_search/helper/screen_utils.dart';
-import 'package:customizable_search/view_models/i_search_model.dart';
 import 'package:customizable_search/view_models/search_model.dart';
 import 'package:customizable_search/widgets/custom_loading.dart';
 import 'package:customizable_search/widgets/search_widget.dart';
@@ -20,7 +19,7 @@ class _SearchPageState extends State<SearchPage> {
       backgroundColor: Color(0xff1B1A26),
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.symmetric(vertical: 40 , horizontal: 24),
+          margin: EdgeInsets.only(top: 40 , left: 24 , right: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -71,7 +70,6 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   Widget _customTextField(){
-
     SearchModel model = Provider.of<SearchModel>(context, listen: false);
     return Container(
       margin: EdgeInsets.only(top: 20),

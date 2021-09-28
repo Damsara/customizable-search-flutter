@@ -11,15 +11,16 @@ class HttpService{
   static HttpService get shared => _instance;
 
   final String baseUrl = 'https://api.rawg.io/api';
-  final String API_KEY = 'be9f8d00d9d04aa6b1b3f6ee26f305b4';
+  final String API_KEY = 'ADD API KEY';
 
   Client client = Client();
 
   Map<String, String> _headers = {
-    "User-Agent": 'PlayHQ',
+    "User-Agent": 'ADD YOUR COMPANY',
     'Content-type': 'application/json',
     'Accept': 'application/json',
   };
+
 
   Future<SearchGame> searchGame(String name) async{
     Response response;
@@ -27,8 +28,13 @@ class HttpService{
 
     response = await client.get(Uri.parse(url), headers: _headers);
 
-    return SearchGame.fromJson(json.decode(response.body));
-
+    if(response.statusCode == 200){
+      return SearchGame.fromJson(json.decode(response.body));
+    }else{
+      throw (e){
+        return e;
+      };
+    }
   }
 
 
